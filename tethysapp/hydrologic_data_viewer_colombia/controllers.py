@@ -72,3 +72,38 @@ def home(request):
     }
 
     return render(request, 'hydrologic_data_viewer_colombia/home.html', context)
+
+def hobs(request):
+    """
+    Controller for the app about page.
+    """
+
+    return render(request, 'hydrologic_data_viewer_colombia/hobs.html')
+
+def hsen(request):
+    """
+    Controller for the app about page.
+    """
+
+    return render(request, 'hydrologic_data_viewer_colombia/hsen.html')
+
+def qobs(request):
+    """
+    Controller for the app about page.
+    """
+
+    return render(request, 'hydrologic_data_viewer_colombia/qobs.html')
+
+def qsen(request):
+    """
+    Controller for the app about page.
+    """
+
+    return render(request, 'hydrologic_data_viewer_colombia/qsen.html')
+
+def about(request):
+    """
+    Controller for the app about page.
+    """
+
+    return render(request, 'hydrologic_data_viewer_colombia/about.html')

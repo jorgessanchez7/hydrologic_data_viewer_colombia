@@ -7,23 +7,44 @@
   </div>
 {% endblock %}
 
+{% block app_navigation_items %}
+
+{% url 'hydrologic_data_viewer_colombia:home' as home %}
+{% url 'hydrologic_data_viewer_colombia:hobs' as hobs %}
+{% url 'hydrologic_data_viewer_colombia:hsen' as hsen %}
+{% url 'hydrologic_data_viewer_colombia:qobs' as qobs %}
+{% url 'hydrologic_data_viewer_colombia:qsen' as qsen %}
+{% url 'hydrologic_data_viewer_colombia:about' as about %}
+
+  <li class="title"></li>
+  <li class="{% if request.path == home %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:home' %}">Home</a></li>
+  <li class="separator"></li>
+  <li class="{% if request.path == hobs %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:hobs' %}">Observed Water Level</a></li>
+  <li class="{% if request.path == hsen %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:hsen' %}">Sensor Water Level</a></li>
+  <li class="{% if request.path == qobs %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:qobs' %}">Observed Discharge</a></li>
+  <li class="{% if request.path == qsen %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:qsen' %}">Sensor Discharge</a></li>
+  <li class="{% if request.path == about %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:about' %}">About</a></li>
+
+{% endblock %}
+
 {% block app_content %}
-  <h1>Welcome to the Hydrologic Data Viewer for Colombia!</h1>
-  <h5><b>Authors:<b></h5>
-  <h5>Jorge Sanchez, Jason Biesinger</h5>
+ <h1>About the Authors!</h1>
+  <h5><b><a href="https://www.linkedin.com/in/jason-biesinger-72ba9586/">Jason Biesinger</a></b></h5>
+  <img src="http://127.0.0.1:8000/static/hydrologic_data_viewer_colombia/images/Jason_photo.jpeg" width="377" height="377">
+  <p>Jason Biesinger is a Civil Engineering</a> masters student with emphasis in Water Resources</a>
+    at <a href="https://www.byu.edu/" target="_blank">Brigham Young University</a></p>
+  <p>If you have any question about the app, you can write an email to <a href="mailto:jasonbiesinger@gmail.com?subject= About The Hydrologic Data Viewer Colombia" target="_blank"> jasonbiesinger@gmail.com</a></p>
   <br>
-  <p>This App is part of the final project for the 534-Hydroinformatics class at Brigham Young University.</p>
   <br>
-  <br>
-  <h3>The Hydrological Data Viewer Colombia app shows the historical data for the state of the rivers in Colombia from the National
-    Basic Network operated by <a href="http://www.ideam.gov.co/" target="_blank">IDEAM</a> and the regional networks operated by
-    <a href="http://www.cvc.gov.co/" target="_blank">CVC</a> and <a href="http://www.car.gov.co/" target="_blank">CAR</a>.
-    The information is from the automatic stations and the telephone reports for the rivers in which there is observation infrastructure
-    available in the platform <a href="http://fews.ideam.gov.co/colombia/MapaEstacionesColombiaEstado.html" target="_blank">FEWS-Colombia</a>.
-    The information here corresponds to data that has not been validated and that cannot be used as official data. The
-    discharge data is estimated through a Water Level - Discharge rating curve, and it can present significant differences
-    with the measured value because of changes in the cross sections, not updated Water Level - Discharge relationships
-    or error in the measurement of the Water Level.</h3>
+
+  <h5><b><a href="https://www.linkedin.com/in/jorge-luis-sanchez-lozano-27866a89/?locale=en_US">Jorge Luis Sanchez</a></b></h5>
+  <img src="http://127.0.0.1:8000/static/hydrologic_data_viewer_colombia/images/Jorge_photo.jpeg" width="500" height="377">
+  <p>Jorge Luis Sanchez is a Civil Engineering PhD Student with emphasis in Water Resources</a>
+    at <a href="https://www.byu.edu/" target="_blank">Brigham Young University</a></p>
+  <p>If you have any question about the app, you can write an email to <a href="mailto:jorgessanchez7@gmail.com?subject= About The Hydrologic Data Viewer Colombia" target="_blank"> jorgessanchez7@gmail.com</a></p>
+
+
+
 {% endblock %}
 
 {# Use the after_app_content block for modals #}

@@ -8,7 +8,7 @@ class HydrologicDataViewerColombia(TethysAppBase):
 
     name = 'Hydrologic Data Viewer Colombia'
     index = 'hydrologic_data_viewer_colombia:home'
-    icon = 'hydrologic_data_viewer_colombia/images/icon.gif'
+    icon = 'hydrologic_data_viewer_colombia/images/colombia.png'
     package = 'hydrologic_data_viewer_colombia'
     root_url = 'hydrologic-data-viewer-colombia'
     color = '#00374b'
@@ -28,6 +28,31 @@ class HydrologicDataViewerColombia(TethysAppBase):
                 name='home',
                 url='hydrologic-data-viewer-colombia',
                 controller='hydrologic_data_viewer_colombia.controllers.home'
+            ),
+            UrlMap(
+                name='hobs',
+                url='hydrologic-data-viewer-colombia/hobs',
+                controller='hydrologic_data_viewer_colombia.controllers.hobs'
+            ),
+            UrlMap(
+                name='hsen',
+                url='hydrologic-data-viewer-colombia/hsen',
+                controller='hydrologic_data_viewer_colombia.controllers.hsen'
+            ),
+            UrlMap(
+                name='qobs',
+                url='hydrologic-data-viewer-colombia/qobs',
+                controller='hydrologic_data_viewer_colombia.controllers.qobs'
+            ),
+            UrlMap(
+                name='qsen',
+                url='hydrologic-data-viewer-colombia/qsen',
+                controller='hydrologic_data_viewer_colombia.controllers.qsen'
+            ),
+            UrlMap(
+                name='about',
+                url='hydrologic-data-viewer-colombia/about',
+                controller='hydrologic_data_viewer_colombia.controllers.about'
             ),
         )
 

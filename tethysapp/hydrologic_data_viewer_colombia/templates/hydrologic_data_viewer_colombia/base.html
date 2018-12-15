@@ -13,16 +13,23 @@
 {% block app_title %}{{ tethys_app.name }}{% endblock %}
 
 {% block app_navigation_items %}
-  <li class="title">App Navigation</li>
-  <li class="active"><a href="">Home</a></li>
-  <li><a href="">Jobs</a></li>
-  <li><a href="">Results</a></li>
-  <li class="title">Steps</li>
-  <li><a href="">1. The First Step</a></li>
-  <li><a href="">2. The Second Step</a></li>
-  <li><a href="">3. The Third Step</a></li>
+
+{% url 'hydrologic_data_viewer_colombia:home' as home %}
+{% url 'hydrologic_data_viewer_colombia:hobs' as hobs %}
+{% url 'hydrologic_data_viewer_colombia:hsen' as hsen %}
+{% url 'hydrologic_data_viewer_colombia:qobs' as qobs %}
+{% url 'hydrologic_data_viewer_colombia:qsen' as qsen %}
+{% url 'hydrologic_data_viewer_colombia:about' as about %}
+
+  <li class="title"></li>
+  <li class="{% if request.path == home %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:home' %}">Home</a></li>
   <li class="separator"></li>
-  <li><a href="">Get Started</a></li>
+  <li class="{% if request.path == hobs %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:hobs' %}">Observed Water Level</a></li>
+  <li class="{% if request.path == hsen %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:hsen' %}">Sensor Water Level</a></li>
+  <li class="{% if request.path == qobs %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:qobs' %}">Observed Discharge</a></li>
+  <li class="{% if request.path == qsen %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:qsen' %}">Sensor Discharge</a></li>
+  <li class="{% if request.path == about %}active{% endif %}"><a href="{% url 'hydrologic_data_viewer_colombia:about' %}">About</a></li>
+
 {% endblock %}
 
 {% block app_content %}
